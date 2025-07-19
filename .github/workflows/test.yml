@@ -58,6 +58,8 @@ jobs:
     steps:
     - name: Setup test environment
       uses: ./.github/actions/setup-test-env
+  with:
+    node-version: ${{ matrix.node-version }}
       with:
         node-version: ${{ matrix.node-version }}
 
