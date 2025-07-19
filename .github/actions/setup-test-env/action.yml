@@ -1,0 +1,21 @@
+name: "Setup Test Environment"
+description: "Installs Node.js dependencies for testing"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies
+      run: npm ci
+      shell: bash
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: false
+    default: "20.x"

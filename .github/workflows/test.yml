@@ -1,3 +1,44 @@
+# name: Node.js CI
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         node-version: [18.x, 20.x]
+
+#     steps:
+#     - uses: actions/checkout@v4
+
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: 'npm'
+
+#     - name: Install dependencies
+#       run: npm ci
+
+#     - name: Run tests with coverage
+#       run: npm test -- --coverage
+
+#     - name: Upload coverage report
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: coverage-report-${{ matrix.node-version }}
+#         path: coverage/
+
+
+
+
+
 name: Node.js CI
 
 on:
@@ -15,16 +56,10 @@ jobs:
         node-version: [18.x, 20.x]
 
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    - name: Setup test environment
+      uses: ./.github/actions/setup-test-env
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-
-    - name: Install dependencies
-      run: npm ci
 
     - name: Run tests with coverage
       run: npm test -- --coverage
