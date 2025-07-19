@@ -8,8 +8,8 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY index.html /usr/share/nginx/html/
 COPY weather.js /usr/share/nginx/html/
 
-
-# Default port for Nginx
+# Expose default Nginx port
 EXPOSE 80
 
+# Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
