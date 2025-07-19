@@ -1,24 +1,32 @@
 const apiKey = '__API_KEY__'; // Will be replaced during CI
 
+async function fetchWeather(city) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${process.env.OPENWEATHERMAP_API_KEY}&units=metric`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('City not found');
+  const data = await res.json();
+  return {
+    temperature: data.main.temp,
+    city: data.name,
+    condition: data.weather[0].description,
+  };
+}
+
+// UI handler for browser
 async function getWeather() {
   const city = document.getElementById('city').value.trim();
   const result = document.getElementById('result');
-
   if (!city) {
     result.textContent = 'Please enter a city name.';
     return;
   }
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
-
   result.textContent = 'Loading...';
-
   try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('City not found');
-    const data = await res.json();
-    result.textContent = `Weather in ${data.name}: ${data.main.temp}°C, ${data.weather[0].description}`;
+    const data = await fetchWeather(city);
+    result.textContent = `Weather in ${data.city}: ${data.temperature}°C, ${data.condition}`;
   } catch (err) {
     result.textContent = err.message;
   }
 }
+
+module.exports = { fetchWeather };

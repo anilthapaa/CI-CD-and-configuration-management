@@ -1,3 +1,21 @@
-.env
+# Node.js dependencies
 node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# Environment variables and secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore build output if you have one
 dist/
+build/

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
   "scripts": {
-    "inject": "node scripts/inject-api-key.js"
+    "inject": "node scripts/inject-api-key.js",
+    "test":"jest --runInBand --coverage"
   },
   "dependencies": {
     "dotenv": "^16.0.0"
