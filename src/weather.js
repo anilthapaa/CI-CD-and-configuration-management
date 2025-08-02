@@ -10,7 +10,7 @@ export default function WeatherFetcher() {
   async function fetchWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city
-    )}&appid=${process.env.OPEN_WEATHER_API_KEY}&units=metric`;
+    )}&appid=${process.secrets.OPEN_WEATHER_API_KEY}&units=metric`;
 
     const res = await fetch(url);
     if (!res.ok) throw new Error("City not found");
