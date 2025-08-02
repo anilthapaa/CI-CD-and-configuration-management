@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/CI-CD-and-configuration-management/static/js/main.055d0de4.js",
+    "main.js": "/CI-CD-and-configuration-management/static/js/main.b2cb372a.js",
     "index.html": "/CI-CD-and-configuration-management/index.html",
-    "main.055d0de4.js.map": "/CI-CD-and-configuration-management/static/js/main.055d0de4.js.map"
+    "main.b2cb372a.js.map": "/CI-CD-and-configuration-management/static/js/main.b2cb372a.js.map"
   },
   "entrypoints": [
-    "static/js/main.055d0de4.js"
+    "static/js/main.b2cb372a.js"
   ]
 }
