@@ -16,9 +16,7 @@
     "start": "react-scripts start",
     "build": "npm run inject && react-scripts build",
     "test": "jest",
-    "inject": "node scripts/inject-api-key.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "inject": "node scripts/inject-api-key.js"
   },
   "jest": {
     "transformIgnorePatterns": [
