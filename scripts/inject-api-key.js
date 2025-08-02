@@ -3,7 +3,7 @@ const path = require('path');
 require('dotenv').config();
 
 const weatherPath = path.join(__dirname, '../src/weather.js');
-const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
+const apiKey = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
 
 if (!apiKey) {
   console.error('❌ API key not found in environment.');
