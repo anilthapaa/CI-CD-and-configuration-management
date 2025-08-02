@@ -10,7 +10,7 @@ export default function WeatherFetcher() {
   async function fetchWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city
-    )}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`;
+    )}&appid=${process.env.OPEN_WEATHER_API_KEY}&units=metric`;
 
     const res = await fetch(url);
     if (!res.ok) throw new Error("City not found");
@@ -47,7 +47,7 @@ export default function WeatherFetcher() {
     <>
       <div className="container">
         <div className="card">
-          <h1 className="title">🌤️ Today's Weather</h1>
+          <h1 className="title">🌤️ Today Weather?</h1>
           <input
             type="text"
             placeholder="Enter city name"
