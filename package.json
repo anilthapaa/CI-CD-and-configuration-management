@@ -2,19 +2,24 @@
   "name": "ica1-cicd-weather",
   "version": "1.0.0",
   "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
-  "scripts": {
-    "inject": "node scripts/inject-api-key.js",
-    "test":"jest --runInBand --coverage"
-  },
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject",
+  "inject": "node scripts/inject-api-key.js"
+},
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "react-script": "^2.0.5",
+    "react-scripts": "^0.0.0"
   },
   "devDependencies": {
     "jest": "^30.0.4",
     "jest-junit": "^16.0.0"
   },
   "jest-junit": {
-  "outputDirectory": "test-results",
-  "outputName": "junit.xml"
-}
+    "outputDirectory": "test-results",
+    "outputName": "junit.xml"
+  }
 }

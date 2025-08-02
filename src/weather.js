@@ -47,7 +47,7 @@ export default function WeatherFetcher() {
     <>
       <div className="container">
         <div className="card">
-          <h1 className="title">🌤️ Today's Weather</h1>
+          <h1 className="title">🌤️ Today Weather?</h1>
           <input
             type="text"
             placeholder="Enter city name"
