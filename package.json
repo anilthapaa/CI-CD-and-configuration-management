@@ -1,0 +1,37 @@
+{
+  "name": "ica1-cicd-weather",
+  "version": "1.0.0",
+  "description": "Weather fetching app with CI/CD, using React and OpenWeather API",
+  "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --runInBand --coverage"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results",
+    "outputName": "junit.xml"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
