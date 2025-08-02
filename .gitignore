@@ -19,3 +19,5 @@ Thumbs.db
 # Optional: Ignore build output if you have one
 dist/
 build/
+
+.env
