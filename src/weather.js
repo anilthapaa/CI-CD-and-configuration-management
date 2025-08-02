@@ -11,7 +11,7 @@ export default function WeatherFetcher() {
   const apiKey = isDev
   ? process.env.REACT_APP_OPEN_WEATHER_API_KEY
   : "__API_KEY_PLACEHOLDER__";
-  console.log("LOADED API KEY: ", apiKey);
+  console.log("LOADED API KEY 1 1: ", apiKey);
 
   async function fetchWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
