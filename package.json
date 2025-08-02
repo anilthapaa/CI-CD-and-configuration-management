@@ -15,8 +15,6 @@
 "scripts": {
   "start": "react-scripts start",
   "build": "npm run inject && react-scripts build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "test": "jest",
   "inject": "node scripts/inject-api-key.js"
 },
