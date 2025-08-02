@@ -11,7 +11,7 @@ if (!apiKey) {
 }
 
 let jsContent = fs.readFileSync(weatherPath, 'utf8');
-jsContent = jsContent.replace('__API_KEY__', apiKey);
+jsContent = jsContent.replace('_API_KEY_', apiKey);
 fs.writeFileSync(weatherPath, jsContent);
 
 console.log('✅ API key injected successfully.');
