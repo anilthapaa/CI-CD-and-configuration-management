@@ -1,26 +1,30 @@
 {
-  "name": "ica1-cicd-weather",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "Weather fetching app with CI/CD, using React and OpenWeather API",
-  "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "dotenv": "^16.4.5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --runInBand --coverage"
+    "test": "jest",
+    "inject": "node scripts/inject-api-key.js"
   },
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(axios)/)"
+    ]
   },
   "devDependencies": {
-    "jest": "^30.0.4",
-    "jest-junit": "^16.0.0"
-  },
-  "jest-junit": {
-    "outputDirectory": "test-results",
-    "outputName": "junit.xml"
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/user-event": "^14.4.3"
   },
   "browserslist": {
     "production": [
