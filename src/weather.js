@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const apiKey = 'undefined'; // Will be replaced with actual API key during deployment
+const isDev = process.env.NODE_ENV === "development";
 
 export default function WeatherFetcher() {
   const [city, setCity] = useState("");
