@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create .env from secret
-        run: echo "OPENWEATHER_API_KEY=${{ secrets.OPENWEATHER_API_KEY }}" > .env
+      # - name: Create .env from secret
+      #   run: echo "OPENWEATHER_API_KEY=${{ secrets.OPENWEATHER_API_KEY }}" > .env
 
-      - name: Inject API Key
-        run: npm run inject
+      # - name: Inject API Key
+      #   run: npm run inject
 
       - name: Build React app
         run: npm run build

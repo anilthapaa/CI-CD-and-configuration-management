@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const apiKey = '_API_KEY_'; // Will be replaced with actual API key during deployment
+const apiKey = 'undefined'; // Will be replaced with actual API key during deployment
 
 export default function WeatherFetcher() {
   const [city, setCity] = useState("");

@@ -13,7 +13,7 @@
   },
 "scripts": {
   "start": "react-scripts start",
-  "build": "npm run inject && react-scripts build",
+  "build": "react-scripts build",
   "test": "jest",
   "inject": "node scripts/inject-api-key.js"
 },
