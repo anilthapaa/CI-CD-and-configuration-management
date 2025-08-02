@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const weatherPath = path.join(__dirname, '../src/weather.js');
+const buildJsDir = path.join(__dirname, '../build/static/js');
 const apiKey = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
 
 if (!apiKey) {
@@ -10,8 +10,15 @@ if (!apiKey) {
   process.exit(1);
 }
 
-let jsContent = fs.readFileSync(weatherPath, 'utf8');
-jsContent = jsContent.replace('_API_KEY_', apiKey);
-fs.writeFileSync(weatherPath, jsContent);
+fs.readdirSync(buildJsDir).forEach((file) => {
+  if (file.endsWith('.js')) {
+    const filePath = path.join(buildJsDir, file);
+    let content = fs.readFileSync(filePath, 'utf8');
 
-console.log('✅ API key injected successfully.');
+    if (content.includes('__API_KEY_PLACEHOLDER__')) {
+      content = content.replace(/__API_KEY_PLACEHOLDER__/g, apiKey);
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`✅ Injected API key into: ${file}`);
+    }
+  }
+});

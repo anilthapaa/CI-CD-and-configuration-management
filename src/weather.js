@@ -6,13 +6,17 @@ export default function WeatherFetcher() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log("Loaded API key:", process.env.REACT_APP_OPEN_WEATHER_API_KEY);
+  // console.log("Loaded API key:", process.env.REACT_APP_OPEN_WEATHER_API_KEY);
 
+  const apiKey = isDev
+  ? process.env.REACT_APP_OPEN_WEATHER_API_KEY
+  : "__API_KEY_PLACEHOLDER__";
+  console.log("LOADED API KEY: ", apiKey);
 
   async function fetchWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city
-    )}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}&units=metric`;
+    )}&appid=${apiKey}&units=metric`;
 
     const res = await fetch(url);
     if (!res.ok) throw new Error("City not found");
